@@ -1,0 +1,20 @@
+{
+  "name": "Tetris",
+  "version": "1.0.0",
+  "description": "- Tetromino Class   - Deal with falling blocks.   - Use a 4×4 sequence to deal with the state of tetromino. - Field Class   - Manage game field.   - Treating field regions as arrays and controlling tetrominoes on the field. - View Class   - Handle the display process to the browser.   - Displays the field and tetromino status on the screen. - Game Class   - Manipulating the game, dealing with the rules.   - Processing parts of the rules other than the above class, such as increasing the speed of the automatic fall according to the score, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FujishigeTemma/Tetris.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FujishigeTemma/Tetris/issues"
+  },
+  "homepage": "https://github.com/FujishigeTemma/Tetris#readme",
+}
