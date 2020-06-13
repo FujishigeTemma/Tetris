@@ -38,8 +38,8 @@ export class Tetrimino {
         return 2;
     }
 
-    tbl: number[][];
-    rotationSize: number;
+    private tbl: number[][];
+    private rotationSize: number;
 
     constructor(tetrimino?: Tetrimino) {
         // クローン用
