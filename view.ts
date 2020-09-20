@@ -1,4 +1,4 @@
-import { Field } from "./field";
+import {Field} from "./field";
 import {Tetrimino} from "./tetrimino";
 
 // ビュークラス
@@ -48,12 +48,12 @@ export class View {
     }
 
     // スコア、ライン、レベル表示更新
-    viewScore (score: number, line: number, level: number) {
+    viewScore(score: number, line: number, level: number) {
         // 省略
     }
 
     // メッセージ表示
-    viewMessage (type: number) {
+    viewMessage(type: number) {
         let message = "";
         switch (type) {
             case 1:

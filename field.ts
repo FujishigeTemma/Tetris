@@ -50,7 +50,7 @@ export class Field {
     }
 
     // 指定座標のブロックを取得
-    getPositionBlock(x, y) {
+    getPositionBlock(x: number, y: number) {
         // 該当座標にテトリミノがあればテトリミノのブロックを返す
         if (this.positionX <= x && x < this.positionX + Tetrimino.getSize()
             && this.positionY <= y && y < this.positionY + Tetrimino.getSize()
@@ -106,7 +106,7 @@ export class Field {
     }
 
     // フィールドとテトリミノが被っていないか判定処理
-    fieldCheck (x, y, tetrimino) {
+    fieldCheck (x: number, y: number, tetrimino: Tetrimino) {
         for (let i = 0; i < Tetrimino.getSize(); i++) {
             for (let j = 0; j < Tetrimino.getSize(); j++) {
                 if (tetrimino.getPointBlock(i, j) > 0) {

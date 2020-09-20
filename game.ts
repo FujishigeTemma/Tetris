@@ -1,5 +1,5 @@
-import { Field } from "./field";
-import { View } from "./view"
+import {Field} from "./field";
+import {View} from "./view"
 
 // ゲームクラス
 export class Game {
@@ -26,16 +26,27 @@ export class Game {
         return View;
     }
 
-    static getWidth() {return 10;}
-    static getHeight() {return 20;}
-    static getNextCount() {return 3;}
-    static getScoreTable() {return [0, 10, 30, 60, 100];}
+    static getWidth() {
+        return 10;
+    }
+
+    static getHeight() {
+        return 20;
+    }
+
+    static getNextCount() {
+        return 3;
+    }
+
+    static getScoreTable() {
+        return [0, 10, 30, 60, 100];
+    }
 
     constructor() {
         const viewClass = Game.getViewClass();
         this.view = new viewClass(Game.getWidth(), Game.getHeight(), Game.getNextCount());
         this.startSettings();
-        this.view.viewScore (this.score, this.line, this.level)
+        this.view.viewScore(this.score, this.line, this.level)
         this.stopFlg = true;
     }
 
@@ -58,10 +69,12 @@ export class Game {
         // 表示更新
         this.view.viewField(this.field)
         this.view.viewNextTetriminos(this.field.getNextTetriminos());
-        this.view.viewScore (this.score, this.line, this.level)
+        this.view.viewScore(this.score, this.line, this.level)
         this.view.viewMessage(0);
         const self = this;
-        this.timeout = setTimeout(function(){self.down()},this.downTime); // 自動落下処理
+        this.timeout = setTimeout(function () {
+            self.down()
+        }, this.downTime); // 自動落下処理
     }
 
     // 落下時間更新
@@ -127,7 +140,7 @@ export class Game {
         clearTimeout(this.timeout);
         const self = this;
         // 下移動処理
-        if(this.field.down()) {
+        if (this.field.down()) {
             // ブロックが固定された場合
             // 操作受付を停止
             this.stopFlg = true;
@@ -137,7 +150,7 @@ export class Game {
             this.updateLevel();
             // 表示更新
             this.view.viewField(this.field);
-            this.view.viewScore (this.score, this.line, this.level)
+            this.view.viewScore(this.score, this.line, this.level)
             this.view.viewMessage(this.field.getLineCount());
             // 落下時間、固定後時間更新
             this.updateDownTime();
@@ -148,13 +161,17 @@ export class Game {
                 return;
             }
             // 指定時間後に次処理呼出
-            this.nextTimeout = setTimeout(function(){self.next()}, this.nextTime);
+            this.nextTimeout = setTimeout(function () {
+                self.next()
+            }, this.nextTime);
         } else {
             // 下移動できた場合
             // 表示更新
             this.view.viewField(this.field);
             // 自動落下処理
-            this.timeout = setTimeout(function(){self.down()},this.downTime);
+            this.timeout = setTimeout(function () {
+                self.down()
+            }, this.downTime);
         }
     }
 
@@ -171,7 +188,9 @@ export class Game {
         this.view.viewNextTetriminos(this.field.getNextTetriminos());
         // 自動落下処理
         const self = this;
-        this.timeout = setTimeout(function(){self.down()},this.downTime);
+        this.timeout = setTimeout(function () {
+            self.down()
+        }, this.downTime);
     }
 
 }

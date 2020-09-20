@@ -39,7 +39,7 @@ export class Tetrimino {
     }
 
     private tbl: number[][];
-    private rotationSize: number;
+    private readonly rotationSize: number;
 
     constructor(tetrimino?: Tetrimino) {
         // クローン用
@@ -111,7 +111,7 @@ export class Tetrimino {
     }
 
     // 該当ポイントのデータを返す
-    getPointBlock(x, y) {
+    getPointBlock(x: number, y: number) {
         return this.tbl[x][y];
     }
 }
